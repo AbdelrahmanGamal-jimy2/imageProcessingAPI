@@ -4,22 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier --config .prettierrc \"src/**/*.js\" --write",
-    "lint": "eslint . --ext .js ",
-    "build": "npx tsc"
+    "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write",
+    "lint": "eslint src/*.ts ",
+    "build": "npx tsc",
+    "start": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.35",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.16",
     "prettier": "^2.6.2",
     "ts-node": "^10.8.0",
     "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
   }
 }
