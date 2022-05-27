@@ -6,13 +6,13 @@ const images = express.Router();
 
 images.get('/', logger, async (req: express.Request, res: express.Response): Promise<void> => {
 	try {
-		const filePath = await process_img(
+		const filePath: string = await process_img(
 			req.query.name as string,
 			+(req.query.width as string),
 			+(req.query.height as string)
 		);
 		res.status(200);
-		res.sendFile(filePath);
+		res.sendFile(filePath as string);
 	} catch (err) {
 		console.log(err);
 		res.status(400);
