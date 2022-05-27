@@ -1,9 +1,10 @@
 import express from 'express';
 import process_img from '../../utilities/img_processing';
+import logger from '../../utilities/logger';
 
 const images = express.Router();
 
-images.get('/', async (req, res) => {
+images.get('/', logger, async (req, res) => {
 	try {
 		const filePath = await process_img(
 			req.query.name as string,

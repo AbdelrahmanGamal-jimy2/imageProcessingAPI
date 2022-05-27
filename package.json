@@ -7,17 +7,24 @@
     "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write",
     "lint": "eslint src/**/*.ts ",
     "build": "npx tsc",
-    "start": "nodemon src/index.ts"
+    "start": "nodemon src/index.ts",
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine",
+    "copyMySpecialFiles": "copyfiles --up 1 ./src/assets/full_image/*.* build",
+    "postbuild": "npm run copyMySpecialFiles && IF NOT EXIST build\\assets\\thumb_img mkdir build\\assets\\thumb_img"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jasmine": "^4.0.3",
     "@types/node": "^17.0.35",
     "@types/sharp": "^0.30.2",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -28,6 +35,9 @@
   },
   "dependencies": {
     "express": "^4.18.1",
-    "sharp": "^0.30.5"
+    "jasmine": "^4.1.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "sharp": "^0.30.5",
+    "supertest": "^6.2.3"
   }
 }
