@@ -4,7 +4,7 @@ import logger from '../../utilities/logger';
 
 const images = express.Router();
 
-images.get('/', logger, async (req, res) : Promise<void> => {
+images.get('/', logger, async (req: express.Request, res: express.Response): Promise<void> => {
 	try {
 		const filePath = await process_img(
 			req.query.name as string,

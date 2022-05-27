@@ -3,7 +3,7 @@ import images from './api/resize_img';
 
 const routes = express.Router();
 
-routes.get('/', (req, res): void => {
+routes.get('/', (req: express.Request, res: express.Response): void => {
 	res.send('Welcome to Image Processing API');
 });
 
